@@ -184,7 +184,7 @@ header img{
 .menu-item .price {
   font-weight: bold;
   font-size: 1.3rem;
-  color: #366e9c; /* portocaliu vibrant pentru preț */
+  color: #366e9c;
   margin-top: 10px;
   margin-bottom: 4px;
   display: inline-block;
@@ -194,12 +194,10 @@ header img{
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .menu-item .price:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.5);
 }
-
 .menu-item .gramaj {
   font-size: 0.95rem;
   color: rgba(255,255,255,0.7);
@@ -208,6 +206,7 @@ header img{
   display: block;
 }
 
+/* ===== Footer ===== */
 .footer {
   background-color: #0c0c0c;
   color: #ddd;
@@ -215,7 +214,6 @@ header img{
   text-align: center;
   border-top: 1px solid rgba(255,255,255,0.1);
 }
-
 .footer-container {
   display: flex;
   flex-wrap: wrap;
@@ -226,30 +224,25 @@ header img{
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-
 .footer h3 {
-  color: #366e9c; /* culoarea accent ZET Kebap */
+  color: #366e9c;
   margin-bottom: 10px;
 }
-
 .footer p, 
 .footer a {
   color: #bbb;
   font-size: 0.95rem;
   text-decoration: none;
 }
-
 .footer a:hover {
   color: #fff;
 }
-
 .social-links {
   display: flex;
   justify-content: center;
   gap: 12px;
   margin-top: 10px;
 }
-
 .social-links a {
   width: 38px;
   height: 38px;
@@ -262,32 +255,36 @@ header img{
   font-size: 1.2rem;
   color: #ddd;
 }
-
 .social-links a:hover {
   background: #366e9c;
   color: #fff;
 }
-
 .footer-bottom {
   margin-top: 20px;
   font-size: 0.9rem;
   color: #888;
 }
 
-/* Responsiv */
-@media (max-width: 600px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  header img { width: 80%; height:auto; }
+  .hero { margin: 30px 15px; padding: 25px; }
+  .hero h2 { font-size: 1.8rem; }
+  .hero p { font-size: 1rem; }
+  .cta-row { flex-direction: column; gap: 12px; }
+  .menu { margin: 20px 10px 40px 10px; padding: 15px; }
+  .menu h2 { font-size: 1.8rem; }
+  .menu-item h3 { font-size: 1.2rem; }
+  .menu-item p, .menu-item .price { font-size: 0.95rem; }
+  .footer-container { flex-direction: column; text-align: center; gap: 15px; }
 }
 
-
-/* ===== Responsive ===== */
-@media(max-width:600px){
-  .hero h2 { font-size:2rem; }
-  .hero p { font-size:1.1rem; }
-  .menu-grid { grid-template-columns: 1fr; }
+@media(max-width:480px){
+  .hero h2 { font-size: 1.5rem; }
+  .hero p { font-size: 0.9rem; }
+  .menu h2 { font-size: 1.5rem; }
+  .menu-item h3 { font-size: 1rem; }
+  .menu-item p, .menu-item .price { font-size: 0.9rem; }
 }
 </style>
 </head>
@@ -301,7 +298,6 @@ header img{
   <p style="font-size:1.2rem; color:rgba(255,255,255,0.85); margin-bottom:25px;">
 Descoperă gustul autentic la ZET Kebap — kebab, shaorma, salate, pizza și burgeri pregătiți proaspăt, cu ingrediente de calitate.  </p>
 
-<!-- Informație pentru comenzi -->
 <p style="
   font-size: 1.05rem;
   color: #f8f8f8;
@@ -318,25 +314,17 @@ Descoperă gustul autentic la ZET Kebap — kebab, shaorma, salate, pizza și bu
   Pentru comenzi, vă rugăm să folosiți partenerii noștri de livrare:
 </p>
 
-  <!-- Livrare prin aplicații -->
-  <div class="cta-row" style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-bottom:25px;">
-    <a class="app-btn" href="https://www.glovoapp.com/ro/" target="_blank" style="display:flex; align-items:center; gap:10px; background:#0f0f0f; border-radius:12px; padding:12px 20px; color:white; text-decoration:none; font-weight:bold; box-shadow:0 8px 18px rgba(0,0,0,0.6); transition:0.2s;">
-      <img src="glovo.png" alt="Glovo" style="height:28px;"> Glovo
-    </a>
-    <a class="app-btn" href="https://bolt.eu/ro/food" target="_blank" style="display:flex; align-items:center; gap:10px; background:#0f0f0f; border-radius:12px; padding:12px 20px; color:white; text-decoration:none; font-weight:bold; box-shadow:0 8px 18px rgba(0,0,0,0.6); transition:0.2s;">
-      <img src="bolt.png" alt="Bolt" style="height:28px;"> Bolt
-    </a>
-    <a class="app-btn" href="https://wolt.com/ro" target="_blank" style="display:flex; align-items:center; gap:10px; background:#0f0f0f; border-radius:12px; padding:12px 20px; color:white; text-decoration:none; font-weight:bold; box-shadow:0 8px 18px rgba(0,0,0,0.6); transition:0.2s;">
-      <img src="wolt.jfif" alt="Wolt" style="height:28px;"> Wolt
-    </a>
-  </div>
+<div class="cta-row" style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-bottom:25px;">
+  <a class="app-btn" href="https://www.glovoapp.com/ro/" target="_blank"><img src="glovo.png" alt="Glovo"> Glovo</a>
+  <a class="app-btn" href="https://bolt.eu/ro/food" target="_blank"><img src="bolt.png" alt="Bolt"> Bolt</a>
+  <a class="app-btn" href="https://wolt.com/ro" target="_blank"><img src="wolt.jfif" alt="Wolt"> Wolt</a>
+</div>
 
-  <!-- Informații utile -->
-  <div class="program" style="font-size:1.1rem; color:rgba(255,255,255,0.85); line-height:1.6;">
-    <strong>Program:</strong> Luni - Sâmbătă • 11:00 - 21:00<br>
-    <strong>Adresă:</strong> Bulevardul Dâmbovița 34, Timișoara 300456<br>
-    <strong>Telefon:</strong> <a href="tel:+40724130010" style="color:white; text-decoration:underline;">+40 712 345 678</a>
-  </div>
+<div class="program" style="font-size:1.1rem; color:rgba(255,255,255,0.85); line-height:1.6;">
+  <strong>Program:</strong> Luni - Sâmbătă • 11:00 - 21:00<br>
+  <strong>Adresă:</strong> Bulevardul Dâmbovița 34, Timișoara 300456<br>
+  <strong>Telefon:</strong> <a href="tel:+40724130010" style="color:white; text-decoration:underline;">+40 712 345 678</a>
+</div>
 </section>
 
 
@@ -633,7 +621,6 @@ Descoperă gustul autentic la ZET Kebap — kebab, shaorma, salate, pizza și bu
 
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-container">
     <div>
@@ -657,8 +644,6 @@ Descoperă gustul autentic la ZET Kebap — kebab, shaorma, salate, pizza și bu
   </div>
 </footer>
 
-
-
 <script>
 // Tabs
 var tabs = document.querySelectorAll('.tab-btn');
@@ -673,6 +658,5 @@ tabs.forEach(tab => {
   });
 });
 </script>
-
 </body>
 </html>
