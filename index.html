@@ -1,348 +1,116 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ZET Kebap - Turkish Food</title>
 <link rel="icon" href="zet.png" type="image/png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <style>
 :root{
   --red:#366e9c;
-  --dark:#0a0a0a;
   --white-opa: rgba(255,255,255,0.92);
-  --accent: rgba(255,255,255,0.1);
   --cta-bg: #0f0f0f;
 }
-
-/* ===== Fundal cu iconite ===== */
 html, body {
-  height: 100%;
-  margin: 0;
-  font-family: "Arial", sans-serif;
-  background-color: #0a0a0a;
-  color: rgba(255,255,255,0.9);
-  background-image: url('data:image/svg+xml;utf8,\
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">\
-  <rect width="100%" height="100%" fill="%230a0a0a"/>\
-  <path d="M40 40 l30 60 l-60 0 z" stroke="rgba(255,255,255,0.05)" fill="none" stroke-width="2"/>\
-  <path d="M130 50 q20 -12 40 0 q2 8 -40 8 q-38 0 -40 -8 z" stroke="rgba(255,255,255,0.05)" fill="none" stroke-width="2"/>\
-  <path d="M40 150 q10 -22 30 0 q-10 22 -30 0z" stroke="rgba(255,255,255,0.05)" fill="none" stroke-width="2"/>\
-  <path d="M160 120 l-4 -30 l4 -20 l12 -4 l12 4 l4 20 l-4 30 z" stroke="rgba(255,255,255,0.05)" fill="none" stroke-width="2"/>\
-</svg>');
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-size: 180px 180px;
+  margin:0; padding:0;
+  font-family:"Arial", sans-serif;
+  background:#0a0a0a;
+  color:rgba(255,255,255,0.9);
 }
+/* Header */
+header{text-align:center;padding:20px;}
+header img{height:120px;width:auto;max-width:90%;filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));}
 
-/* ===== Header ===== */
-header{
-  text-align:center;
-  padding:25px 10px;
-}
-header img{
-  height:150px;
-  width: 350px; 
-  display:inline-block;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));
-}
-
-/* ===== Hero ===== */
+/* Hero */
 .hero{
-  max-width:900px;
-  margin:60px auto;
+  max-width:90%;
+  margin:30px auto;
+  padding:20px;
   text-align:center;
-  padding:30px;
-  border-radius:20px;
+  border-radius:15px;
   background: rgba(255,255,255,0.02);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  box-shadow:0 10px 20px rgba(0,0,0,0.5);
 }
-.hero h2{
-  font-size:2.6rem;
-  color:var(--white-opa);
-  margin-bottom:10px;
-}
-.hero p{
-  font-size:1.3rem;
-  color:rgba(255,255,255,0.85);
-  margin-bottom:30px;
-}
-.cta-row{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-bottom:20px;
-}
-.app-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background: var(--cta-bg);
-  border:2px solid rgba(255,255,255,0.05);
-  padding:12px 18px;
-  border-radius:12px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  transition:transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.6);
-}
-.app-btn img {
-  height: 28px;
-  width: auto;
-  object-fit: contain;
-}
-.app-btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.7);
-}
-.program{
-  margin-top:15px;
-  font-size:1.1rem;
-  color:rgba(255,255,255,0.85);
-}
+.hero h2{font-size:1.6rem;margin-bottom:10px;color:var(--white-opa);}
+.hero p{font-size:0.95rem;margin-bottom:15px;color:rgba(255,255,255,0.85);}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:15px;}
+.app-btn{display:flex;align-items:center;gap:8px;background: var(--cta-bg);border-radius:10px;padding:8px 12px;color:white;text-decoration:none;font-weight:bold;transition:0.15s;}
+.app-btn img{height:24px;width:auto;}
+.app-btn:hover{transform:translateY(-2px);}
 
-/* ===== Tabs ===== */
-.tabs {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-.tab-btn {
-  background: rgba(255,255,255,0.05);
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  font-size: 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.tab-btn.active {
-  background: var(--red);
-}
-.tab-content {
-  display: none;
-}
-.tab-content.active {
-  display: block;
-}
+/* Tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;overflow-x:auto;padding-bottom:5px;}
+.tab-btn{flex:0 0 auto;background:rgba(255,255,255,0.05);border:none;padding:6px 12px;border-radius:10px;color:white;cursor:pointer;font-size:0.9rem;transition:0.2s;}
+.tab-btn.active{background:var(--red);}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
 
-/* ===== Meniu ===== */
-.menu {
-  max-width: 1000px;
-  margin: 40px auto 80px auto;
-  padding: 20px;
-  background: rgba(255,255,255,0.02);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  color: rgba(255,255,255,0.9);
-}
-.menu h2 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 30px;
-  color: var(--white-opa);
-}
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-.menu-item {
-  background: rgba(255,255,255,0.02);
-  border-radius: 15px;
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.menu-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-}
-.menu-item img {
-  width: 100%;
-  max-height: 140px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 12px;
-}
-.menu-item h3 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
-  color: var(--white-opa);
-}
-.menu-item p {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.85);
-}
+/* Menu */
+.menu{max-width:95%;margin:20px auto;padding:10px;background:rgba(255,255,255,0.02);border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.5);}
+.menu h2{text-align:center;font-size:1.5rem;margin-bottom:15px;color:var(--white-opa);}
+.menu-grid{display:grid;grid-template-columns:1fr;gap:12px;}
+.menu-item{background:rgba(255,255,255,0.02);border-radius:12px;padding:10px;text-align:center;transition:0.2s;}
+.menu-item:hover{transform:translateY(-2px);box-shadow:0 8px 15px rgba(0,0,0,0.5);}
+.menu-item img{width:100%;max-height:100px;object-fit:cover;border-radius:10px;margin-bottom:6px;}
+.menu-item h3{font-size:1rem;margin-bottom:4px;color:var(--white-opa);}
+.menu-item p{font-size:0.8rem;margin-bottom:4px;color:rgba(255,255,255,0.8);}
+.menu-item .price{font-weight:bold;font-size:0.9rem;color:var(--red);margin-top:2px;background:rgba(255,255,255,0.05);padding:2px 6px;border-radius:5px;display:inline-block;}
 
-/* ===== Preț și gramaj ===== */
-.menu-item .price {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: #366e9c;
-  margin-top: 10px;
-  margin-bottom: 4px;
-  display: inline-block;
-  background: rgba(255,255,255,0.05);
-  padding: 4px 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.menu-item .price:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.5);
-}
-.menu-item .gramaj {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.7);
-  font-style: italic;
-  margin-bottom: 8px;
-  display: block;
-}
+/* Footer */
+.footer{background:#0c0c0c;color:#ddd;padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);}
+.footer-container{display:flex;flex-wrap:wrap;justify-content:space-around;gap:10px;max-width:900px;margin:0 auto;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.footer h3{color:var(--red);margin-bottom:6px;}
+.footer p,.footer a{color:#bbb;font-size:0.85rem;text-decoration:none;}
+.footer a:hover{color:#fff;}
+.social-links{display:flex;justify-content:center;gap:8px;margin-top:5px;}
+.social-links a{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);color:#ddd;font-size:0.85rem;transition:0.2s;}
+.social-links a:hover{background:var(--red);color:#fff;}
+.footer-bottom{margin-top:10px;font-size:0.75rem;color:#888;}
 
-/* ===== Footer ===== */
-.footer {
-  background-color: #0c0c0c;
-  color: #ddd;
-  padding: 40px 20px 20px;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-.footer h3 {
-  color: #366e9c;
-  margin-bottom: 10px;
-}
-.footer p, 
-.footer a {
-  color: #bbb;
-  font-size: 0.95rem;
-  text-decoration: none;
-}
-.footer a:hover {
-  color: #fff;
-}
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 10px;
-}
-.social-links a {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,0.05);
-  transition: 0.3s;
-  font-size: 1.2rem;
-  color: #ddd;
-}
-.social-links a:hover {
-  background: #366e9c;
-  color: #fff;
-}
-.footer-bottom {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #888;
-}
-
-/* ===== Responsive ===== */
-@media(max-width:768px){
-  header img { width: 80%; height:auto; }
-  .hero { margin: 30px 15px; padding: 25px; }
-  .hero h2 { font-size: 1.8rem; }
-  .hero p { font-size: 1rem; }
-  .cta-row { flex-direction: column; gap: 12px; }
-  .menu { margin: 20px 10px 40px 10px; padding: 15px; }
-  .menu h2 { font-size: 1.8rem; }
-  .menu-item h3 { font-size: 1.2rem; }
-  .menu-item p, .menu-item .price { font-size: 0.95rem; }
-  .footer-container { flex-direction: column; text-align: center; gap: 15px; }
-}
-
-@media(max-width:480px){
-  .hero h2 { font-size: 1.5rem; }
-  .hero p { font-size: 0.9rem; }
-  .menu h2 { font-size: 1.5rem; }
-  .menu-item h3 { font-size: 1rem; }
-  .menu-item p, .menu-item .price { font-size: 0.9rem; }
-}
+/* Responsive Grids */
+@media(min-width:480px){.menu-grid{grid-template-columns:repeat(2,1fr);}.menu-item img{max-height:120px;}}
+@media(min-width:768px){.menu-grid{grid-template-columns:repeat(3,1fr);}.hero h2{font-size:2rem;}.hero p{font-size:1rem;}}
 </style>
 </head>
 <body>
+
 <header>
   <img src="zetkebap.png" alt="ZET Kebap Logo">
 </header>
 
-<section class="hero" style="max-width:900px; margin:60px auto; padding:40px; border-radius:20px; background: rgba(255,255,255,0.03); box-shadow:0 10px 30px rgba(0,0,0,0.6); text-align:center;">
-  <h2 style="font-size:2.6rem; color:white; margin-bottom:15px;">Bun venit la ZET Kebap!</h2>
-  <p style="font-size:1.2rem; color:rgba(255,255,255,0.85); margin-bottom:25px;">
-Descoperă gustul autentic la ZET Kebap — kebab, shaorma, salate, pizza și burgeri pregătiți proaspăt, cu ingrediente de calitate.  </p>
-
-<p style="
-  font-size: 1.05rem;
-  color: #f8f8f8;
-  font-weight: 500;
-  background: linear-gradient(90deg, rgba(54,110,156,0.6) 0%, rgba(46,78,104,0.6) 100%);
-  padding: 8px 14px;
-  border-radius: 8px;
-  text-align: center;
-  max-width: 520px;
-  margin: 0 auto 20px auto;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  letter-spacing: 0.3px;
-">
+<section class="hero">
+  <h2>Bun venit la ZET Kebap!</h2>
+  <p>Descoperă gustul autentic la ZET Kebap — kebab, shaorma, salate, pizza și burgeri pregătiți proaspăt, cu ingrediente de calitate.</p>
+  <p style="font-size:0.85rem;background:linear-gradient(90deg, rgba(54,110,156,0.6), rgba(46,78,104,0.6));padding:6px 10px;border-radius:6px;max-width:500px;margin:0 auto 10px;">
   Pentru comenzi, vă rugăm să folosiți partenerii noștri de livrare:
-</p>
-
-<div class="cta-row" style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-bottom:25px;">
-  <a class="app-btn" href="https://www.glovoapp.com/ro/" target="_blank"><img src="glovo.png" alt="Glovo"> Glovo</a>
-  <a class="app-btn" href="https://bolt.eu/ro/food" target="_blank"><img src="bolt.png" alt="Bolt"> Bolt</a>
-  <a class="app-btn" href="https://wolt.com/ro" target="_blank"><img src="wolt.jfif" alt="Wolt"> Wolt</a>
-</div>
-
-<div class="program" style="font-size:1.1rem; color:rgba(255,255,255,0.85); line-height:1.6;">
-  <strong>Program:</strong> Luni - Sâmbătă • 11:00 - 21:00<br>
-  <strong>Adresă:</strong> Bulevardul Dâmbovița 34, Timișoara 300456<br>
-  <strong>Telefon:</strong> <a href="tel:+40724130010" style="color:white; text-decoration:underline;">+40 712 345 678</a>
-</div>
+  </p>
+  <div class="cta-row">
+    <a class="app-btn" href="https://www.glovoapp.com/ro/" target="_blank"><img src="glovo.png" alt="Glovo">Glovo</a>
+    <a class="app-btn" href="https://bolt.eu/ro/food" target="_blank"><img src="bolt.png" alt="Bolt">Bolt</a>
+    <a class="app-btn" href="https://wolt.com/ro" target="_blank"><img src="wolt.jfif" alt="Wolt">Wolt</a>
+  </div>
+  <div class="program" style="font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.4;">
+    <strong>Program:</strong> Luni - Sâmbătă • 11:00 - 21:00<br>
+    <strong>Adresă:</strong> Bulevardul Dâmbovița 34, Timișoara<br>
+    <strong>Telefon:</strong> <a href="tel:+40724130010" style="color:white;text-decoration:underline;">+40 712 345 678</a>
+  </div>
 </section>
-
-
 
 <section class="menu">
   <h2>Meniu</h2>
 
-<!-- Tabs -->
-<div class="tabs">
-  <button class="tab-btn active" data-tab="toate">Toate Produsele</button>
-  <button class="tab-btn" data-tab="shaorma">Shaorma</button>
-  <button class="tab-btn" data-tab="kebap">Kebap</button>
-  <button class="tab-btn" data-tab="farfurie">Farfurie</button>
-  <button class="tab-btn" data-tab="salate">Salate</button>
-  <button class="tab-btn" data-tab="garnituri">Garnituri</button>
-  <button class="tab-btn" data-tab="desert">Desert</button>
-  <button class="tab-btn" data-tab="bauturi">Băuturi</button>
-</div>
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="toate">Toate Produsele</button>
+    <button class="tab-btn" data-tab="shaorma">Shaorma</button>
+    <button class="tab-btn" data-tab="kebap">Kebap</button>
+    <button class="tab-btn" data-tab="farfurie">Farfurie</button>
+    <button class="tab-btn" data-tab="salate">Salate</button>
+    <button class="tab-btn" data-tab="garnituri">Garnituri</button>
+    <button class="tab-btn" data-tab="desert">Desert</button>
+    <button class="tab-btn" data-tab="bauturi">Băuturi</button>
+  </div>
 
   <!-- TOATE PRODUSELE -->
   <div class="tab-content active" id="toate">
@@ -621,6 +389,7 @@ Descoperă gustul autentic la ZET Kebap — kebab, shaorma, salate, pizza și bu
 
 </section>
 
+
 <footer class="footer">
   <div class="footer-container">
     <div>
@@ -629,7 +398,6 @@ Descoperă gustul autentic la ZET Kebap — kebab, shaorma, salate, pizza și bu
       <p><strong>Email:</strong> <a href="mailto:contact@zetkebap.ro">contact@zetkebap.ro</a></p>
       <p><strong>Adresă:</strong> Bulevardul Dâmbovița 34, Timișoara</p>
     </div>
-
     <div>
       <h3>Urmărește-ne</h3>
       <div class="social-links">
@@ -639,16 +407,13 @@ Descoperă gustul autentic la ZET Kebap — kebab, shaorma, salate, pizza și bu
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 ZET Kebap - Turkish Food. Toate drepturile rezervate.</p>
-  </div>
+  <div class="footer-bottom">&copy; 2025 ZET Kebap - Turkish Food. Toate drepturile rezervate.</div>
 </footer>
 
 <script>
 // Tabs
 var tabs = document.querySelectorAll('.tab-btn');
 var contents = document.querySelectorAll('.tab-content');
-
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(t => t.classList.remove('active'));
@@ -658,5 +423,6 @@ tabs.forEach(tab => {
   });
 });
 </script>
+
 </body>
 </html>
