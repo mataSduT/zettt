@@ -40,16 +40,18 @@ header img{height:120px;width:auto;max-width:90%;filter: drop-shadow(0 6px 14px 
 .tab-btn{flex:0 0 auto;background:rgba(255,255,255,0.05);border:none;padding:6px 12px;border-radius:10px;color:white;cursor:pointer;font-size:0.9rem;transition:0.2s;}
 .tab-btn.active{background:var(--red);}
 .tab-content {
-  display:block;
-  opacity:0;
-  max-height:0;
-  overflow:hidden;
+  display: none;
+  opacity: 0;
   transition: all 0.3s ease;
+  overflow: visible; /* nu mai tăie conținutul */
 }
+
 .tab-content.active {
-  opacity:1;
-  max-height:2000px;
+  display: block;
+  opacity: 1;
+  max-height: none; /* sau elimină complet */
 }
+
 
 /* Menu */
 .menu{max-width:95%;margin:20px auto;padding:10px;background:rgba(255,255,255,0.02);border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.5);}
@@ -431,3 +433,4 @@ tabs.forEach(tab => {
 
 </body>
 </html>
+
